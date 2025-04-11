@@ -393,15 +393,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column-reverse; /* Inverser l'ordre : image en haut, texte en dessous */
     padding: 50px;
     background-color: #f9f6f1;
     gap: 30px;
-    flex-direction: row; /* Texte à gauche, image à droite */
 }
 
 .founder-text {
+    text-align: center; /* Centrer le texte */
     max-width: 600px;
-    text-align: left;
 }
 
 .founder-text h2 {
@@ -418,17 +418,14 @@ header {
 .founder-image img {
     max-width: 500px;  /* Taille de l'image */
     border-radius: 10px;
+    display: block; /* Centrer l'image */
+    margin: 0 auto;  /* Centrer l'image horizontalement */
 }
 
 /* 🎯 VERSION MOBILE */
 @media screen and (max-width: 768px) {
     .founder-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .founder-image {
-        margin-top: 20px;
+        padding: 30px;
     }
 
     .founder-image img {
