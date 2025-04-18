@@ -1,0 +1,727 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f6f1; /* fond crème élégant */
+    color: #000;
+}
+
+header {
+    background-color: #f9f6f1;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-left li a,
+.nav-right li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        padding-top: 40px; /* Ajuste si nécessaire */  
+}
+
+.hero-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* Menu Fullscreen */
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2c2c2c;
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.fullscreen-menu.open {
+    display: flex;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-links {
+    list-style: none;
+    text-align: center;
+}
+
+.menu-links li {
+    margin: 15px 0;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-family: Georgia, serif;
+}
+
+.menu-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Galerie de Parfums */
+.perfume-gallery {
+    padding: 40px;
+    background-color: #fff;
+    margin-top: 40px; /* Espacement entre l'image principale et la galerie */
+}
+
+.perfume-gallery h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Galerie - Style des images */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonne réactive */
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%; /* Remplir toute la largeur du conteneur */
+    height: 300px; /* Hauteur fixe pour uniformité */
+    object-fit: cover; /* Ne pas déformer l'image */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Masquer les galeries au départ */
+.hidden {
+    display: none;
+}
+
+/* Section Galerie de TravelSize */
+.travelsize-gallery {
+    padding: 40px;
+    background-color: #fff;
+    margin-top: 40px; /* Espacement entre l'image principale et la galerie */
+}
+
+.travelsize-gallery h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Styles communs aux galeries */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonne réactive */
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%; /* Remplir toute la largeur du conteneur */
+    height: 300px; /* Hauteur fixe pour uniformité */
+    object-fit: cover; /* Ne pas déformer l'image */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Cacher l'image en haut de la section About */
+#about-hero-image {
+    display: none;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #f9f6f1;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.about-text h2, .about-text h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-images {
+    flex: 1;
+    max-width: 45%;
+}
+
+.about-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.about-text h2, .about-text h3 {
+    font-family: 'Georgia', serif;
+}
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .about-images {
+        max-width: 100%;
+    }
+}
+/* Style pour la section Customer Contact */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-top: 40px; /* Espacement avant la section */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Titre de la section */
+.contact-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style du formulaire */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Style des champs de formulaire */
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f6f1;
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol pour les champs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #a67c52; /* Couleur dorée subtile */
+    outline: none;
+    box-shadow: 0 0 5px rgba(166, 124, 82, 0.5);
+}
+
+/* Style du bouton d'envoi */
+.contact-form button {
+    background-color: #a67c52;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet de survol pour le bouton */
+.contact-form button:hover {
+    background-color: #d19d59; /* Couleur dorée plus claire */
+    transform: translateY(-2px);
+}
+
+/* Style du message de confirmation après soumission */
+.contact-form .confirmation-message {
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Erreur */
+.contact-form .error-message {
+    font-size: 16px;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 14px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+    }
+}
+.logo {
+    display: inline-block;
+    padding: 10px 20px;
+    color: hsl(0, 100%, 2%);
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logo:hover {
+    background-color: #fcfbfbb5;
+    transform: scale(1.05); /* Effet de survol pour agrandir légèrement */
+}
+
+.logo:active {
+    background-color: #444; /* Effet lors du clic */
+    transform: scale(0.98); /* Effet de pression */
+}
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrage horizontal */
+    justify-content: center; /* Centrage vertical optionnel */
+    padding: 40px;
+    text-align: center;
+}
+  
+  .main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .parfum-label {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #444;
+    text-transform: uppercase;
+    font-family: 'Didot', serif; /* Donne un look luxe */
+  }
+  /* Section Founder */
+  .founder-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse; /* Inverser l'ordre : image en haut, texte en dessous */
+    padding: 50px;
+    background-color: #f9f6f1;
+    gap: 30px;
+}
+
+.founder-text {
+    text-align: center; /* Centrer le texte */
+    max-width: 600px;
+}
+
+.founder-text h2 {
+    font-size: 3.5rem;  /* Taille du titre */
+    margin-bottom: 20px;
+}
+
+.founder-text p {
+    font-size: 1.5rem;  /* Taille du texte */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.founder-image img {
+    max-width: 500px;  /* Taille de l'image */
+    border-radius: 10px;
+    display: block; /* Centrer l'image */
+    margin: 0 auto;  /* Centrer l'image horizontalement */
+}
+
+/* 🎯 VERSION MOBILE */
+@media screen and (max-width: 768px) {
+    .founder-section {
+        padding: 30px;
+    }
+
+    .founder-image img {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* Cacher la section si nécessaire */
+.hidden {
+    display: none;
+}
+
+.terms-conditions-section {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .terms-conditions-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .terms-conditions-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  section {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+  
+  section:not(.hidden) {
+    opacity: 1;
+  }
+  /* Section de Contact WhatsApp */
+.whatsapp-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animation d'apparition */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bouton Contact WhatsApp */
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #25D366, #128C7E); /* Gradient dynamique */
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.whatsapp-button:hover {
+    background: linear-gradient(145deg, #128C7E, #25D366);
+    transform: translateY(-4px); /* Effet de survol plus prononcé */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    animation: pulse 1s infinite; /* Animation de pulsation */
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.whatsapp-button:active {
+    transform: translateY(1px); /* Effet de pression au clic */
+}
+
+.whatsapp-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Effet d'animation sur l'icône */
+.whatsapp-button:hover .whatsapp-logo {
+    transform: rotate(360deg); /* Rotation de l'icône au survol */
+}
+/* Footer global */
+footer {
+    background-color: transparent; /* Fond transparent */
+    color: #333;                   /* Texte gris foncé pour contraste avec le fond clair */
+    text-align: center;            /* Centrer tout le texte et le contenu */
+    padding: 40px 20px;            /* Espacement autour du contenu */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Typographie moderne */
+    width: 100%;                   /* Prendre toute la largeur */
+}
+
+/* Contenu du footer */
+.footer-content {
+    max-width: 1200px;             /* Limiter la largeur du contenu */
+    margin: 0 auto;                /* Centrer le contenu horizontalement */
+}
+
+/* Texte copyright */
+footer p {
+    margin: 20px 0;                /* Espacement autour du texte */
+    font-size: 14px;               /* Taille du texte */
+    color: #333;                   /* Gris foncé pour une bonne lisibilité */
+}
+
+/* Liens des réseaux sociaux */
+.footer-socials {
+    display: flex;                 /* Utilisation de flexbox pour aligner horizontalement */
+    justify-content: center;       /* Centrer les icônes horizontalement */
+    gap: 25px;                     /* Espacement entre les icônes */
+    margin-bottom: 20px;           /* Espacement sous les icônes */
+}
+
+/* Liens vers les réseaux sociaux */
+.footer-socials a {
+    display: inline-block;         /* S'assurer que les icônes sont en ligne */
+    width: 40px;                   /* Taille des icônes */
+    height: 40px;                  /* Hauteur égale à la largeur pour des icônes carrées */
+    border-radius: 50%;            /* Icônes arrondies */
+    background-color: #fff;        /* Fond blanc pour un contraste élégant */
+    display: flex;                 /* Utilisation de flexbox pour centrer l'image */
+    justify-content: center;       /* Centrer l'image */
+    align-items: center;           /* Centrer l'image */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation de transition */
+}
+
+/* Icônes des réseaux sociaux */
+.social-logo {
+    width: 20px;                   /* Réduire légèrement la taille des icônes */
+    height: 20px;                  /* Maintenir la proportion de l'image */
+    object-fit: contain;           /* S'assurer que l'image s'adapte bien */
+}
+
+/* Effet au survol des icônes */
+.footer-socials a:hover {
+    background-color: #0077b5;     /* Changer le fond au survol (bleu pour Facebook, personnalisez selon l'icône) */
+    transform: scale(1.2);          /* Agrandir l'icône au survol */
+}
+
+/* Responsivité : Adapter le design aux petits écrans */
+@media (max-width: 768px) {
+    /* Sur les petits écrans, ajuster l'espacement */
+    .footer-socials {
+        gap: 20px;                 /* Réduire l'espacement entre les icônes */
+    }
+
+    .social-logo {
+        width: 25px;               /* Ajuster la taille des icônes pour mobile */
+        height: 25px;              /* Taille cohérente */
+    }
+
+    footer p {
+        font-size: 12px;           /* Réduire la taille du texte copyright sur mobile */
+    }
+}
+/* Styles par défaut (pour les écrans de bureau et plus grands) */
+body {
+    font-size: 16px;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Styles pour les tablettes et les petits écrans (largeur de l'écran de 768px ou moins) */
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  }
+  
+  /* Styles pour les appareils mobiles (largeur de l'écran de 480px ou moins) */
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 12px;
+      padding: 5px;
+    }
+  
+    .container {
+      padding: 5px;
+    }
+  }
+/* Conteneur Flexbox */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    flex: 1 1 200px; /* L'élément prendra au minimum 200px mais pourra grandir et rétrécir */
+    margin: 10px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Barre d'information - version générale (desktop) */
+.info-bar {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Version mobile (moins haute, texte plus petit) */
+  @media (max-width: 768px) {
+    .info-bar {
+      padding: 3px 10px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+  
+    .info-item {
+      padding: 0 20px;
+    }
+  }
+  
+  /* Animation des messages */
+  .info-item {
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 0;
+    animation: scrollText 10s linear infinite;
+  }
+  
+  /* Délais pour chaque message */
+  .info-item:nth-child(1) { animation-delay: 0s; }
+  .info-item:nth-child(2) { animation-delay: 3s; }
+  .info-item:nth-child(3) { animation-delay: 6s; }
+  .info-item:nth-child(4) { animation-delay: 9s; }
+  .info-item:nth-child(5) { animation-delay: 12s; }
+  .info-item:nth-child(6) { animation-delay: 15s; }
+  
+  /* Animation */
+  @keyframes scrollText {
+    0%, 100% { opacity: 0; transform: translateX(100%); }
+    25% { opacity: 1; transform: translateX(0); }
+    75% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-100%); }
+  }
+  
